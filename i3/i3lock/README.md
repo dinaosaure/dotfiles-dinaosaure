@@ -73,6 +73,14 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/.local/bin/lock --nofor
 | Lock with the classic i3lock | `$mod+d` → `i3lock` |
 | Lock on suspend | automatic (xss-lock) |
 
+## Taking a screenshot of the lock screen
+
+i3lock grabs the keyboard, so screenshot shortcuts don't work while locked. Use a delay instead:
+
+```bash
+lock & sleep 2 && scrot ~/preview.png
+```
+
 ## Customization
 
 Edit `~/.local/bin/lock`. Colors use the `RRGGBBAA` format (last two digits = opacity).
@@ -92,6 +100,6 @@ Want a blurred screenshot instead of black? Replace `--color=000000` with `--blu
 
 Full list of options: `man i3lock`
 
-## Known limitations
+## Notes
 
-- `i3lock-color` has no position option for the `no input` message (shown when pressing backspace on an empty field). It is always drawn at the center of the ring, so it briefly overlaps the greeter text.
+- The `no input` message (shown when pressing backspace on an empty field) is not positioned by `--wrong-pos` but by `--status-pos`, which is not clearly documented in `man i3lock`. It is set here so the message appears below the ring instead of over the greeter text.

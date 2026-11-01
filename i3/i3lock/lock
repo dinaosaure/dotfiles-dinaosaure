@@ -19,7 +19,7 @@ exec i3lock "$@" \
   --verif-color=f5c2e7ff --wrong-color=ff5555ff \
   --verif-font="sans-serif" --wrong-font="sans-serif" \
   --verif-size=18 --wrong-size=18 \
-  --verif-pos="ix:iy+150" --wrong-pos="ix:iy+150" \
+  --verif-pos="ix:iy+150" --wrong-pos="ix:iy+150" --status-pos="ix:iy+150" \
   --verif-text="verifying..." --wrong-text="wrong password" --noinput-text="no input" \
   --radius 110 --ring-width 7
 
