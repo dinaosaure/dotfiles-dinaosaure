@@ -1,4 +1,4 @@
-# i3lock – Dark & Pink Lock Screen
+# i3lock – Lock Screen
 
 A custom lock screen for **i3wm on Arch Linux**, built with [i3lock-color](https://github.com/Raymo111/i3lock-color).
 Black background, pink ring, clock, and a custom greeter text.
