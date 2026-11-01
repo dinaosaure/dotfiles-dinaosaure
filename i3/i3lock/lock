@@ -1,0 +1,25 @@
+#!/bin/sh
+
+exec i3lock "$@" \
+  --color=000000 \
+  --clock --indicator \
+  --time-str="%H:%M" --date-str="%A %d %B" \
+  --time-font="sans-serif:style=Bold" --time-size=56 \
+  --date-font="sans-serif" --date-size=20 \
+  --time-pos="ix:iy-170" --date-pos="tx:ty+35" \
+  --time-color=ff79c6ff --date-color=f5c2e7ff \
+  --greeter-text="dinaosaure" \
+  --greeter-font="sans-serif:style=Bold" --greeter-size=26 \
+  --greeter-color=ff79c6ff --greeter-pos="ix:iy+8" \
+  --inside-color=1a1a24cc --ring-color=ff79c6ff \
+  --line-color=00000000 --separator-color=00000000 \
+  --keyhl-color=c2185bff --bshl-color=6a1b9aff \
+  --insidever-color=1a1a24cc --ringver-color=f5c2e7ff \
+  --insidewrong-color=1a1a24cc --ringwrong-color=ff5555ff \
+  --verif-color=f5c2e7ff --wrong-color=ff5555ff \
+  --verif-font="sans-serif" --wrong-font="sans-serif" \
+  --verif-size=18 --wrong-size=18 \
+  --verif-pos="ix:iy+150" --wrong-pos="ix:iy+150" \
+  --verif-text="verifying..." --wrong-text="wrong password" --noinput-text="no input" \
+  --radius 110 --ring-width 7
+
