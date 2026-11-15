@@ -88,11 +88,11 @@ Edit `~/.local/bin/lock`. Colors use the `RRGGBBAA` format (last two digits = op
 | Option | Value | Role |
 |---|---|---|
 | `--color` | `000000` | Background |
-| `--ring-color` | `ff79c6ff` | Ring (idle) |
+| `--ring-color` | `e78fb3ff` | Ring (idle) |
 | `--inside-color` | `1a1a24cc` | Inside of the ring |
 | `--keyhl-color` | `c2185bff` | Keypress highlight |
-| `--bshl-color` | `6a1b9aff` | Backspace highlight |
-| `--ringver-color` | `f5c2e7ff` | Ring while verifying |
+| `--bshl-color` | `8a5a6eff` | Backspace highlight |
+| `--ringver-color` | `f2b8ccff` | Ring while verifying |
 | `--ringwrong-color` | `ff5555ff` | Ring on wrong password |
 | `--greeter-text` | `dinaosaure` | Text inside the ring |
 

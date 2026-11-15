@@ -37,10 +37,10 @@ exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+#bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -188,6 +188,21 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
+        position bottom
+        height 32
+        font pango:monospace 11
+
+        colors {
+        background #f8d7e3
+        statusline #4a2c3a
+        separator  #c48a9f
+
+        focused_workspace  #e79fb3 #e78fb3 #ffffff
+        active_workspace   #f2b8cc #f2b8cc #4a2c3a
+        inactive_workspace #f8d7e3 #f8d7e3 #8a5a6e
+        urgent_workspace   #c2185b #c2185b #ffffff
+    }
+
 }
 
 # Plein écran (touche Impulsion écran ou Mod + F12)
@@ -201,3 +216,13 @@ bindsym Shift+Print exec "scrot -s 'screenshot_%Y-%m-%d-%H-%M-%S.png' -e 'mv $f 
 
 bindsym Ctrl+Mod1+l exec --no-startup-id ~/.local/bin/lock
 
+exec --no-startup-id dunst
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 5 && notify-send -h string:x-dunst-stack-tag:vol -h int:value:$(pamixer --get-volume) "Volume"
+bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 5 && notify-send -h string:x-dunst-stack-tag:vol -h int:value:$(pamixer --get-volume) "Volume"
+bindsym XF86AudioMute exec --no-startup-id pamixer -t && notify-send -h string:x-dunst-stack-tag:vol "Volume" "$(pamixer --get-volume-human)"
+
+client.focused          #f8d7e3 #f8d7e3 #4a2c3a #f8d7e3 #f8d7e3
+client.focused_inactive #000000 #000000 #f2b8cc #000000 #000000
+client.unfocused        #000000 #000000 #8a5a6e #000000 #000000
+client.urgent           #c2185b #c2185b #ffffff #c2185b #c2185b
