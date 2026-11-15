@@ -1,0 +1,8 @@
+[colors.primary]
+foreground="#F2b8cc"
+background="#000000"
+
+#[window]
+
+#padding = { x = 20, y = 20}
+
